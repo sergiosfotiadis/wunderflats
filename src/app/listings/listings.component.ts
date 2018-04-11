@@ -8,7 +8,7 @@ import {ListingService} from '../services/listing/listing.service';
 })
 export class ListingsComponent implements OnInit {
     listings = [];
-    loading: boolean = false;
+    loading = false;
     message = "";
     constructor(private listingService: ListingService) {
     }
@@ -27,7 +27,7 @@ export class ListingsComponent implements OnInit {
         this.loading = true;
         this.listingService.getListings()
             .subscribe(data => {
-                    if (data.body) {
+                    if (data.status === 200 && data.body) {
                         _listings = data.body.listings;
                         if (_listings.length !== 0) {
                             for (let i = 0; i < _listings.length; i++) {

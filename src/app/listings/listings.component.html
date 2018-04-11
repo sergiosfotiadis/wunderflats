@@ -1,8 +1,8 @@
 <p>
     <button type="button" class="btn btn-default"
-            (click)="loadListings()">Get listings
+            (click)="loadListings()">
+        <img src="../../assets/images/spinner.gif" class="spinner" *ngIf="loading"/>Get listings
     </button>
-    <span><img src="../assets/images/spinner.gif" *ngIf="loading"/></span>
 </p>
 
 <div class="well mt-md" *ngIf="listings.length>0">
