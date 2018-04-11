@@ -1,0 +1,25 @@
+<p>
+    <button type="button" class="btn btn-default"
+            (click)="loadListings()">Get listings
+    </button>
+    <span><img src="../assets/images/spinner.gif" *ngIf="loading"/></span>
+</p>
+
+<div class="well mt-md" *ngIf="listings.length>0">
+    <ul class="list-group">
+        <div *ngFor="let item of listings">
+            <li class="list-group-item">{{item.titleEn}}</li>
+        </div>
+    </ul>
+</div>
+
+<div *ngIf="message.length>0">
+    <div class="panel panel-danger">
+        <div class="panel-body">
+            <h4>Error occurred</h4>
+            <div>{{message}}</div>
+        </div>
+
+    </div>
+
+</div>
